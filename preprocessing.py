@@ -4,13 +4,12 @@ from PIL import Image
 from pathlib import Path
 import shutil
 
-# SETTINGS
 input_dir = "COM31006-DATASET"
 output_dir = "dataset"
 img_size = (128, 128)
 train_split = 0.8
 
-random.seed(42)  # reproducibility
+random.seed(42)
 
 classes = os.listdir(input_dir)
 
@@ -18,7 +17,6 @@ for cls in classes:
     cls_path = os.path.join(input_dir, cls)
     images = [f for f in os.listdir(cls_path) if f.lower().endswith(('.jpg', '.png', '.jpeg'))]
 
-    # Shuffle images
     random.shuffle(images)
 
     split_idx = int(len(images) * train_split)
