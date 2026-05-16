@@ -1,8 +1,6 @@
 import os
 import random
 from PIL import Image
-from pathlib import Path
-import shutil
 
 input_dir = "COM31006-DATASET"
 output_dir = "dataset"
